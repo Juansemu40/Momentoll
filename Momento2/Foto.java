@@ -6,7 +6,7 @@ public class Foto {
         this.carpeta = carpeta;
     }
 
-    public void print() {
+    public void mostrar() {
         System.out.println("Imprimiendo foto: " + carpeta);
     }
 

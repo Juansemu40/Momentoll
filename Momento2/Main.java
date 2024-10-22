@@ -14,17 +14,20 @@ public class Main {
         Pedido pedido = new Pedido(cliente, productos,  123456789);
 
         System.out.println("Cliente: " + pedido.getCliente().getNombre());
+        System.out.println("Cedula de Ciudadania: " + cliente.getCedula());
+        System.out.println("Tarjeta de Crédito: " + pedido.getNumeroTarjetaCredito());
         System.out.println("Fecha: " + pedido.getFechaFormateada());
         for (Producto producto : pedido.getProductos()) {
             if (producto instanceof Impresion) {
                 System.out.println("Producto: Impresión, Tipo de Impresion: " + ((Impresion) producto).getColor());
                 for (Foto foto : ((Impresion) producto).getFotos()) {
-                    foto.print();
+                    foto.mostrar();
                 }
             } else if (producto instanceof Camara) {
-                System.out.println("Producto: Cámara, Marca: " + ((Camara) producto).getMarca() +
+                  System.out.println("Producto con que se hicieron las fotos: Cámara, Marca: " + ((Camara) producto).getMarca() +
                         ", Modelo: " + ((Camara) producto).getModelo());
             }
         }
     }
 }
+
